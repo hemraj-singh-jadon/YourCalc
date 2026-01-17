@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>YourCalc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="/fblogo.png" type="image/x-icon" />
+     <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        background: #f0f2f5;
+        color: #1c1e21;
+      }
+
+      /* Top Bar */
+      .topbar {
+        height: 56px;
+        background: #ffffff;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: #1877f2;
+      }
+
+      .login {
+        background: #1877f2;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        margin-left: 0.4rem;
+      }
+
+      .login:hover {
+        opacity: 0.9;
+      }
+
+      /* Cover */
+      .cover {
+        height: 280px;
+        background: url("https://plus.unsplash.com/premium_photo-1699712036127-c467c75eeaa0?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fGNvdmVyJTIwcGhvdG98ZW58MHx8MHx8fDA%3D")
+          center/cover;
+        position: relative;
+        z-index: -1;
+      }
+
+      /* Header Info */
+      .header-info {
+        max-width: 1100px;
+        margin: -90px auto 0;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 1rem;
+      }
+
+      .profile-wrapper {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .avatar {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        background: #fff;
+      }
+
+      .profile-wrapper h2 {
+        margin: 0;
+      }
+
+      .profile-wrapper p {
+        margin-top: 0.4rem;
+        color: #65676b;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+
+      #badge {
+        height: 18px;
+        vertical-align: middle;
+      }
+
+      .actions button {
+        padding: 0.55rem 1rem;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        margin-left: 0.4rem;
+      }
+
+      .actions button:hover {
+        opacity: 0.9;
+      }
+
+      .follow {
+        background: #1877f2;
+        color: white;
+      }
+
+      .message {
+        background: #e4e6eb;
+      }
+
+      /* Layout */
+      .layout {
+        max-width: 1100px;
+        margin: 3rem auto 1rem;
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem 2rem;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+      }
+
+      /* Sidebar */
+      .about p {
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.5;
+      }
+
+      /* Feed */
+      .feed {
+        max-height: 70vh;
+        overflow-y: auto;
+        padding-right: 0.5rem;
+      }
+
+      .post {
+        margin-bottom: 1.5rem;
+      }
+
+      .post-header {
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+
+      .post-time {
+        font-size: 0.85rem;
+        color: #65676b;
+        margin-bottom: 0.6rem;
+      }
+
+      .post p {
+        margin: 0.5rem 0;
+        line-height: 1.5;
+        font-size: 0.95rem;
+      }
+
+      .post img {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 0.7rem;
+      }
+
+      .post-actions {
+        font-size: 0.9rem;
+        color: #65676b;
+        margin-top: 0.6rem;
+      }
+
+      /* Scrollbar */
+      .feed::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .feed::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1.5rem;
+        color: #666;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+        Fackbook
+
+        <div class="btn-log">
+            <button class="login">Log in</button>
+            <button class="login">Sign up</button>
+        </div>
+    </div>
+
+    <div class="cover"></div>
+
+    <div class="header-info">
+      <div class="profile-wrapper">
+        <img
+          class="avatar"
+          src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620"
+        />
+        <div style="margin-top: 120px;">
+          <h2>
+            YourCalc <img src="/public/image.png" alt="badge" id="badge" />
+          </h2>
+          <p>
+            Simple tools. Clean design. Fast performance. YourCalc Services
+            <br />
+            Welcome to the official page of YourCalc. T&C- Contest & Trivia
+            <br />
+            https://casioio.com/in/event-casio-calcsulators-trivia-terms-conditions
+            www.casio.com/in
+          </p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="follow">Follow</button>
+        <button class="message">Message</button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <!-- Sidebar -->
+      <div class="card about">
+        <h3>About</h3>
+        <p>
+          YourCalc App makes everyday calculations easy and reliable. Follow
+          along for UI improvements, helpful tips, and thoughtful design updates
+          focused on simplicity and accuracy.
+        </p>
+      </div>
+
+      <!-- Feed -->
+      <div class="feed">
+        <div class="card post">
+          <div class="post-header">YourCalc App</div>
+          <div class="post-time">Just now</div>
+          <p>
+            A clean interface reduces cognitive load. Our latest update
+            simplifies spacing and contrast.
+          </p>
+          <img
+            src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb"
+          />
+          
+        </div>
+
+        <div class="card post">
+          <div class="post-header">YourCalc App</div>
+          <div class="post-time">Today · 3:45 PM</div>
+          <p>
+            YourCalc workflows matter. Keyboard-first interactions make a big
+            difference.
+          </p>
+          <img
+            src="https://media.istockphoto.com/id/175499282/photo/calculator-xl.jpg?s=612x612&w=0&k=20&c=gG8VxsQA_hqLhjhwyAgQy97lSkXVNFxizU2xylnRxEg="
+          />
+        </div>
+
+        <div class="card post">
+          <div class="post-header">YourCalc App</div>
+          <div class="post-time">Yesterday · 6:15 PM</div>
+          <p>Minimal design isn’t empty — it’s intentional.</p>
+          <img
+            src="https://plus.unsplash.com/premium_photo-1677109899683-9d449c66d9e8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FsY3VsYXRvcnxlbnwwfHwwfHx8MA%3D%3D"
+          />
+        </div>
+
+        <div class="card post">
+          <div class="post-header">YourCalc App</div>
+          <div class="post-time">Today · 10:45 AM</div>
+          <p>We are here to make your calculations fun.</p>
+          <img
+            src="https://images.unsplash.com/photo-1668930185267-1f3c19851b5b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhbGN1bGF0b3J8ZW58MHx8MHx8fDA%3D"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <footer>© 2026 YourCalc App · Demo Social Page</footer>
+  </body>
+</html>

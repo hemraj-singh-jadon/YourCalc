@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap");
+
+.calculator {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(3rem, auto);
+  justify-content: center;
+  max-width: 400px;
+  margin: 150px auto 60px;
+  padding: 0 35px;
+}
+
+.output {
+  grid-column: 1/-1;
+  background-color: rgba(241, 239, 237, 0.9);
+  color: black;
+  grid-row: minmax(6rem);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* word-wrap: break-word;
+  word-break: break-all; */
+  justify-content: center;
+
+  /* responsive text scaling */
+  font-size: clamp(1rem, 5vw, 2rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.current-output {
+  font-size: 1.7rem;
+}
+
+.preview-output {
+  font-size: 1rem;
+}
+
+.preview-output,
+.current-output {
+  height: 2.5rem;
+  padding: 5px;
+}
+
+.calculator button {
+  height: 2.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.mic-btn .material-symbols-outlined {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Listening state */
+
+.mic-btn.listening {
+  background: linear-gradient(160deg, #14b8a6, #0f766e);
+  box-shadow: 0 0 6px rgba(20, 184, 166, 0.5);
+  animation: micGlow 1.6s ease-in-out infinite;
+}
+
+/* Soft breathing glow */
+
+@keyframes micGlow {
+  0% {
+    box-shadow: 0 0 6px rgba(20, 184, 166, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(20, 184, 166, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(20, 184, 166, 0.45);
+  }
+}
+
+/* Mic pulse */
+
+.mic-btn.listening .material-symbols-outlined {
+  animation: micPulse 1.3s ease-in-out infinite;
+}
+
+@keyframes micPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* header  */
+
+.app-header {
+  height: 58px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  background-color: rgba(248, 245, 240, 0.92);
+  color: #2f2f2f;
+  backdrop-filter: blur(7px);
+
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.left img {
+  height: 38px;
+  width: 38px;
+}
+
+.title-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-family: "Edu NSW ACT Cursive", cursive;
+}
+
+.tagline {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  font-family: system-ui, sans-serif;
+}
+
+.right {
+  display: flex;
+  gap: 10px;
+  margin-right: 30px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  padding: 6px 10px;
+
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+  color: inherit;
+}
+
+.app-footer {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+
+  padding: 10px 20px;
+
+  background-color: rgba(248, 245, 240, 0.92);
+  color: #2f2f2f;
+  backdrop-filter: blur(7px);
+
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+
+  font-size: 0.8rem;
+}
+
+.footer-left {
+  white-space: nowrap;
+}
+
+.footer-center {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-center i {
+  font-size: 1rem;
+  color: black;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.footer-center i:hover {
+  opacity: 1;
+}
+
+.footer-right {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-right a {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.footer-right a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* privacy  */
+
+.legal-page {
+  color: #2f2f2f;
+  max-width: 720px;
+  margin: 100px auto 100px;
+  padding: 0 20px;
+
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.legal-page h1 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.legal-page h2 {
+  font-size: 1.1rem;
+  margin-top: 24px;
+}
+
+/* support */
+
+.voice-preview {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.tally-wrapper {
+  margin-top: 40px;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px grey;
+  background: #f8f5f0;
+}
+
+.tally-iframe {
+  width: 100%;
+  height: 430px;
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* Hide tally logo */
+.tally-cover {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: min(450px, 65%);
+  height: 60px;
+  background: #fff;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .tally-cover {
+    display: none !important;
+  }
+
+  .tally-iframe {
+    height: 540px;
+  }
+
+  .calculator {
+    margin: 150px auto 30px;
+    padding: 0 35px;
+  }
+}
