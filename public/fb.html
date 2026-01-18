@@ -5,14 +5,18 @@
     <title>YourCalc</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="/fblogo.png" type="image/x-icon" />
-     <style>
+    <style>
       * {
         box-sizing: border-box;
       }
 
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
         background: #f0f2f5;
         color: #1c1e21;
       }
@@ -64,12 +68,15 @@
         justify-content: space-between;
         align-items: flex-end;
         gap: 1rem;
+        flex-wrap: wrap;
       }
 
       .profile-wrapper {
         display: flex;
         gap: 1.5rem;
         align-items: center;
+        flex: 1 1 100%;
+        min-width: 220px;
       }
 
       .avatar {
@@ -78,6 +85,7 @@
         border-radius: 50%;
         border: 5px solid #fff;
         background: #fff;
+        flex-shrink: 0;
       }
 
       .profile-wrapper h2 {
@@ -91,9 +99,19 @@
         line-height: 1.4;
       }
 
+      .mtd {
+          margin-top: 120px;
+        }
+
       #badge {
         height: 18px;
         vertical-align: middle;
+      }
+
+      .actions {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
       }
 
       .actions button {
@@ -102,7 +120,6 @@
         border: none;
         cursor: pointer;
         font-weight: 600;
-        margin-left: 0.4rem;
       }
 
       .actions button:hover {
@@ -174,6 +191,7 @@
         width: 100%;
         border-radius: 8px;
         margin-top: 0.7rem;
+        height: auto;
       }
 
       .post-actions {
@@ -198,16 +216,88 @@
         color: #666;
         font-size: 0.9rem;
       }
+
+      /* Responsive Styles */
+      @media (max-width: 900px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+
+        .header-info {
+          flex-direction: column;
+          align-items: center;
+          margin-top: -70px;
+          text-align: center;
+        }
+
+        .profile-wrapper {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .mtd {
+          margin-top: 50px;
+        }
+
+        .actions {
+          justify-content: center;
+          width: 100%;
+        }
+
+        .cover {
+          height: 200px;
+        }
+
+        .avatar {
+          width: 140px;
+          height: 140px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .topbar {
+          font-size: 1.2rem;
+          padding: 0 1rem;
+        }
+
+        .login {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.85rem;
+        }
+
+        .cover {
+          height: 150px;
+        }
+
+        .avatar {
+          width: 100px;
+          height: 100px;
+        }
+
+        .profile-wrapper p {
+          font-size: 0.85rem;
+        }
+
+        .post p {
+          font-size: 0.9rem;
+        }
+
+        .mtd {
+          margin-top: 30px;
+        }
+        
+      }
     </style>
   </head>
   <body>
     <div class="topbar">
-        Fackbook
+      Fackbook
 
-        <div class="btn-log">
-            <button class="login">Log in</button>
-            <button class="login">Sign up</button>
-        </div>
+      <div class="btn-log">
+        <button class="login">Log in</button>
+        <button class="login">Sign up</button>
+      </div>
     </div>
 
     <div class="cover"></div>
@@ -218,10 +308,8 @@
           class="avatar"
           src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620"
         />
-        <div style="margin-top: 120px;">
-          <h2>
-            YourCalc <img src="/image.png" alt="badge" id="badge" />
-          </h2>
+        <div  class="mtd">
+          <h2>YourCalc <img src="/image.png" alt="badge" id="badge" /></h2>
           <p>
             Simple tools. Clean design. Fast performance. YourCalc Services
             <br />
@@ -262,7 +350,6 @@
           <img
             src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb"
           />
-          
         </div>
 
         <div class="card post">

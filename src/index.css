@@ -48,6 +48,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background: linear-gradient(160deg, #000, #444);
+  color: #fff;
   cursor: pointer;
   transition: background 0.05s ease, transform 0.02s ease;
   user-select: none;
@@ -64,15 +65,3 @@ button:active {
 }
 
 
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */

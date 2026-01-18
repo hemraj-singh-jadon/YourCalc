@@ -21,8 +21,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  /* word-wrap: break-word;
-  word-break: break-all; */
   justify-content: center;
 
   /* responsive text scaling */
@@ -260,8 +258,6 @@
   margin-top: 24px;
 }
 
-/* support */
-
 .voice-preview {
   font-size: 0.85rem;
   color: #777;
@@ -269,14 +265,19 @@
   text-align: center;
 }
 
+
+/* support */
+
+
 .tally-wrapper {
   margin-top: 40px;
   position: relative;
   width: 100%;
   max-width: 100%;
+  min-height: 430px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 15px grey;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   background: #f8f5f0;
 }
 
@@ -288,17 +289,18 @@
   background: #fff;
 }
 
-/* Hide tally logo */
 .tally-cover {
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   right: 10px;
-  width: min(450px, 65%);
+  width: min(230px, 35%);
   height: 60px;
   background: #fff;
   border-radius: 12px;
   pointer-events: none;
+  user-select: none;
 }
+
 
 @media (max-width: 480px) {
   .tally-cover {

@@ -97,7 +97,6 @@ function Support() {
 
       </div>
 
-
       <p>
         Read our <a href="/privacy">Privacy Policy</a> and{" "}
         <a href="/terms">Terms of Service</a>.

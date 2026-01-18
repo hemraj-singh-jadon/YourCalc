@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <title>YourCalc</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="shortcut icon"
-      href="/instalogo.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="/instalogo.png" type="image/x-icon" />
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap");
@@ -35,6 +31,7 @@
         justify-content: space-around;
         font-size: 1.5rem;
         box-sizing: border-box;
+        flex-wrap: wrap;
       }
 
       #insta-title {
@@ -42,6 +39,7 @@
         font-weight: 500;
         font-family: "Edu NSW ACT Cursive", cursive;
       }
+
       .insta-btn {
         background-color: rgb(66, 66, 226);
         color: white;
@@ -60,6 +58,8 @@
         display: flex;
         gap: 2rem;
         align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .avatar {
@@ -73,16 +73,22 @@
         height: 20px;
       }
 
+      .info {
+        text-align: left;
+        flex: 1 1 200px;
+      }
+
       .info h2 {
         margin: 0;
         display: inline-block;
-        margin-right: 40px;
+        margin-right: 20px;
       }
 
       .stats {
         display: flex;
         gap: 1.5rem;
         margin: 0.5rem 0;
+        flex-wrap: wrap;
       }
 
       .stats div {
@@ -111,6 +117,54 @@
         color: #666;
         font-size: 0.9rem;
       }
+
+      /* Responsive Styles */
+      @media (max-width: 700px) {
+        .profile {
+          flex-direction: column;
+          text-align: center;
+          gap: 1rem;
+        }
+
+        .info h2 {
+          margin-right: 0;
+        }
+
+        .stats {
+          justify-content: center;
+          gap: 1rem;
+        }
+
+        .avatar {
+          width: 100px;
+          height: 100px;
+        }
+
+        .grid img {
+          height: 200px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        header {
+          font-size: 1.2rem;
+          padding: 0.5rem;
+        }
+
+        .insta-btn {
+          padding: 6px 10px;
+          font-size: 0.85rem;
+        }
+
+        .avatar {
+          width: 80px;
+          height: 80px;
+        }
+
+        .grid img {
+          height: 150px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -126,9 +180,7 @@
       <img class="avatar" src="/apple-touch-icon.png" alt="Profile" />
       <div class="info">
         <div class="page-name">
-          <h2>
-            YourCalc <img src="/image.png" alt="badge" id="badge" />
-          </h2>
+          <h2>YourCalc <img src="/image.png" alt="badge" id="badge" /></h2>
 
           <button class="insta-btn">Follow</button>
           <button class="insta-btn">Message</button>
